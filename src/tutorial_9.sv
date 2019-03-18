@@ -765,6 +765,7 @@ endmodule: jelly_bean_taster
 //------------------------------------------------------------------------------
 // Module: tb_top
 //------------------------------------------------------------------------------
+import uvm_pkg::*;
 import jelly_bean_pkg::*;
 
 module tb_top;
@@ -788,6 +789,13 @@ module tb_top;
                                                     .value( jb_if ) );
       run_test();
    end
+
+   `ifdef DUMP_FSDB
+   initial begin
+      $fsdbDumpon;
+      $fsdbDumpfile("test.fsdb");
+   end
+   `endif
 endmodule: tb_top
 
 //==============================================================================
