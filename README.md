@@ -1,4 +1,4 @@
-## Testbench for *UVM Tutorial for Candy Lovers*
+## Testbench of *UVM Tutorial for Candy Lovers* which uses YASA as simulation script
 
 ### List of testcases
 - `testcases/sanity1`: for Tutorial #9.
