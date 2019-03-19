@@ -15,7 +15,7 @@
 6. `%> YASAsim -t sanity1`
 
 #### Run a testcase or a group
-    ```
+```
     %> YASAsim -h    
     %> YASAsim -doc 
     %> YASAsim -version
@@ -25,7 +25,7 @@
     %> YASAsim -t sanity1 -seed 352938188 -so
     %> YASAsim -g top_smoke -co
     %> YASAsim -g top_smoke -p 5
-    ```
+```
     
 #### Reference
 uvm candy lover is my favourite UVM tutorial [UVM Tutorial for Candy Lovers](http://cluelogic.com/).
