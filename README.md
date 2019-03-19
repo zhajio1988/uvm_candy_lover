@@ -16,18 +16,18 @@
 
 #### Run a testcase or a group
 ```
-    %> YASAsim -h    
-    %> YASAsim -doc 
-    %> YASAsim -version
-    %> YASAsim -t sanity1 -co
-    %> YASAsim -t sanity1 -r 5 
-    %> YASAsim -t sanity1 -seed 352938188
-    %> YASAsim -t sanity1 -seed 352938188 -so
-    %> YASAsim -g top_smoke -co
-    %> YASAsim -g top_smoke -p 5
+%> YASAsim -h    
+%> YASAsim -doc 
+%> YASAsim -version
+%> YASAsim -t sanity1 -co
+%> YASAsim -t sanity1 -r 5 
+%> YASAsim -t sanity1 -seed 352938188
+%> YASAsim -t sanity1 -seed 352938188 -so
+%> YASAsim -g top_smoke -co
+%> YASAsim -g top_smoke -p 5
 ```
     
 #### Reference
-uvm candy lover is my favourite UVM tutorial [UVM Tutorial for Candy Lovers](http://cluelogic.com/).
+uvm candy lover is my favourite UVM tutorial.[UVM Tutorial for Candy Lovers](http://cluelogic.com/).
 
 我将教程翻译成中文并发表在我的博客上[UVM糖果爱好者教程](https://blog.csdn.net/zhajio/column/info/20484).
