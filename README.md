@@ -59,6 +59,7 @@ endclass: sanity1
 %> YASAsim -g top_smoke -p 5
 ```
 `%> YASAsim -g top_smoke`
+
 Part of log
 ```
 Compile passed
