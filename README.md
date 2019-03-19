@@ -1,24 +1,27 @@
-##Source Code for *UVM Tutorial for Candy Lovers*
+##Testbench for *UVM Tutorial for Candy Lovers*
 This is a source code repo for [UVM Tutorial for Candy Lovers](http://cluelogic.com/).
 
-###List of source code
-- `src/tutorial_1_to_6.sv`: for Tutorials #1 to #6.
-- `src/tutorial_7_and_8.sv`: for Tutorials #7 and #8.
-- `src/tutorial_9.sv`: for Tutorial #9.
-- `src/tutorial_15.sv`: for Tutorial #15.
-- `src/tutorial_21.sv`: for Tutorial #21.
-- There is no source code associated with Tutorials #10, 11, 12, 13, 14, 16, 17, 18, 19, or 20.
+###List of testcases
+- `testcases/sanity1`: for Tutorial #9.
+- `testcases/sanity2`: for Tutorial #9..
+- `testcases/sanity3`: for Tutorial #9.
 
-###How to install
+###How to use
 ####Using git
-1. `git clone https://github.com/cluelogic/uvm-tutorial-for-candy-lovers`
-2. Go to the **run** directory: `cd uvm-tutorial-for-candy-lovers/run`
-3. Check **make** options: `make help`
-4. Run a simulation using the options listed in the previous step.
+1. `%> git clone https://github.com/zhajio1988/uvm_candy_lover.git`
+2. `%> cd uvm_candy_lover/bin`
+3. `%> git clone https://github.com/zhajio1988/YASA.git`
+4. `%> cd ../`
+5. `%> source bin/bootenv.csh`
+6. `%> YASAsim -t sanity1`
 
-####Traditional way
-1. Click the **Download ZIP** button on the right.
-2. Unzip the source code: `unzip uvm-tutorial-for-candy-lovers-master.zip`
-3. Go to the **run** directory: `cd uvm-tutorial-for-candy-lovers-master/run`
-4. Check **make** options: `make help`
-5. Run a simulation using the options listed in the previous step.
+####Run a testcase or a group
+    %> YASAsim -h    
+    %> YASAsim -doc 
+    %> YASAsim -version
+    %> YASAsim -t sanity1 -co
+    %> YASAsim -t sanity1 -r 5 
+    %> YASAsim -t sanity1 -seed 352938188
+    %> YASAsim -t sanity1 -seed 352938188 -so
+    %> YASAsim -g top_smoke -co
+    %> YASAsim -g top_smoke -p 5
