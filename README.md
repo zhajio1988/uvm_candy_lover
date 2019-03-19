@@ -58,6 +58,48 @@ endclass: sanity1
 %> YASAsim -g top_smoke -co
 %> YASAsim -g top_smoke -p 5
 ```
+`%> YASAsim -g top_smoke`
+```
+Compile passed
+Log:
+    /home/IC/github/uvm_candy_lover_m3d19/uvm_candy_lover/uvm_candy_lover_out/top_smoke/candy_lover/compile.log
+
+Starting top_smoke__sanity1__12345
+Output file: yasa_out/test_output/top_smoke__sanity1__12345_1ae3ecaaa2d2275db4cd18af359c46ad39a7cf24/output.txt
+warn (P=0 W=1 F=0 T=5) top_smoke__sanity1__12345 (18.4 seconds)
+
+Starting top_smoke__sanity2__56789
+Output file: yasa_out/test_output/top_smoke__sanity2__56789_739ee350705b6245bad54c506770c647a283d9e3/output.txt
+pass (P=1 W=1 F=0 T=5) top_smoke__sanity2__56789 (5.4 seconds)
+
+Starting top_smoke__sanity3__1494303291
+Output file: yasa_out/test_output/top_smoke__sanity3__1494303291_083ec24b5103daa8f2f7b71e6dcdea957b0aae12/output.txt
+fail (P=1 W=1 F=1 T=5) top_smoke__sanity3__1494303291 (14.8 seconds)
+
+Starting top_smoke__sanity3__4018961881
+Output file: yasa_out/test_output/top_smoke__sanity3__4018961881_05c8092cf91f2c3b951231c31a4c1151507866fd/output.txt
+fail (P=1 W=1 F=2 T=5) top_smoke__sanity3__4018961881 (14.6 seconds)
+
+Starting top_smoke__sanity3__376008663
+Output file: yasa_out/test_output/top_smoke__sanity3__376008663_e05177caa20c66a6df793653ba83f3f1be33c653/output.txt
+fail (P=1 W=1 F=3 T=5) top_smoke__sanity3__376008663 (20.7 seconds)
+
+==== Summary ==========================================
+pass top_smoke__sanity2__56789      (5.4 seconds)
+warn top_smoke__sanity1__12345      (18.4 seconds)
+fail top_smoke__sanity3__1494303291 (14.8 seconds)
+fail top_smoke__sanity3__4018961881 (14.6 seconds)
+fail top_smoke__sanity3__376008663  (20.7 seconds)
+=======================================================
+pass 1 of 5
+warn 1 of 5
+fail 3 of 5
+=======================================================
+Total time was 74.0 seconds
+Elapsed time was 74.2 seconds
+=======================================================
+Some failed!
+```
 More YASA options, ref YASA [README.md](https://github.com/zhajio1988/YASA/blob/master/README.md)
 #### Reference
 uvm candy lover is my favourite UVM tutorial.[UVM Tutorial for Candy Lovers](http://cluelogic.com/).
