@@ -1,4 +1,4 @@
-export YASA_SIMULATOR=irun
+export YASA_SIMULATOR=vcs
 
 export PRJ_HOME=`pwd`
 export PRJ_NAME=`basename ${PRJ_HOME}`

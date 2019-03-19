@@ -18,6 +18,7 @@ class sanity1 extends jelly_bean_base_test;
       
       #100ns;
       phase.drop_objection( .obj( this ) );
+      `uvm_warning(this.get_name(), "debug point warning")
       
    endtask: main_phase
 endclass: sanity1
