@@ -5,7 +5,7 @@
 - `testcases/sanity2`: for Tutorial #9..
 - `testcases/sanity3`: for Tutorial #9.
 
-mandatory: each testcase dir name should be same with tests.sv name
+Mandatory: each testcase dir name should be same with tests.sv name
 
 such as: `testcases/sanity1/sanity1.sv`
 
@@ -59,7 +59,7 @@ endclass: sanity1
 %> YASAsim -g top_smoke -co
 %> YASAsim -g top_smoke -p 5
 ```
-more yasa options, ref YASA [README.md](https://github.com/zhajio1988/YASA/blob/master/README.md)
+More YASA options, ref YASA [README.md](https://github.com/zhajio1988/YASA/blob/master/README.md)
     
 #### Reference
 uvm candy lover is my favourite UVM tutorial.[UVM Tutorial for Candy Lovers](http://cluelogic.com/).
