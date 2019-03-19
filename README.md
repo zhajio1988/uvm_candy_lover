@@ -62,5 +62,4 @@ More YASA options, ref YASA [README.md](https://github.com/zhajio1988/YASA/blob/
     
 #### Reference
 uvm candy lover is my favourite UVM tutorial.[UVM Tutorial for Candy Lovers](http://cluelogic.com/).
-
 我将教程翻译成中文并发表在我的博客上.[UVM糖果爱好者教程](https://blog.csdn.net/zhajio/column/info/20484).
