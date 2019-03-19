@@ -5,7 +5,7 @@
 - `testcases/sanity2`: for Tutorial #9..
 - `testcases/sanity3`: for Tutorial #9.
 
-Mandatory: each testcase dir name should be same with tests.sv name
+Mandatory: each testcase dir name should be same with xxx.sv name
 
 such as: `testcases/sanity1/sanity1.sv`
 
@@ -37,7 +37,6 @@ endclass: sanity1
 
 `endif
 ```
-
 ### How to use
 #### Using git
 1. `%> git clone https://github.com/zhajio1988/uvm_candy_lover.git`
