@@ -793,9 +793,22 @@ module tb_top;
    `ifdef DUMP_FSDB
    initial begin
       $fsdbDumpon;
-      $fsdbDumpfile("test.fsdb");
+      $fsdbDumpfile($psprintf("%s.fsdb", get_wave_name()));
+      $fsdbDumpvars("+all");
+      $fsdbDumpflush;
    end
    `endif
+
+   function string get_wave_name();
+      string wave_name;
+      if($test$plusargs("WAVE_NAME")) begin
+         void'($value$plusargs("WAVE_NAME=%s", wave_name));
+      end
+      else begin
+         wave_name = "test";
+      end
+   endfunction
+
 endmodule: tb_top
 
 //==============================================================================
