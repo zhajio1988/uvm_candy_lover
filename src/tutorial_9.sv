@@ -807,6 +807,7 @@ module tb_top;
       else begin
          wave_name = "test";
       end
+      return wave_name;
    endfunction
 
 endmodule: tb_top
