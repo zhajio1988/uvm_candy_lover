@@ -13,3 +13,23 @@ alias YASAsim="python3 $PRJ_HOME/bin/YASA/yasaTop.py"
 
 export NOVAS_EDIT_SOURCE=1
 export FSDB_DUMP_RIDB=1
+
+### auto completion ###
+_show_complete()
+{
+    local cur prev opts
+    COMPREPLY=()
+    cur="${COMP_WORDS[COMP_CWORD]}"
+    prev="${COMP_WORDS[COMP_CWORD-1]}"
+    opts=`YASAsim -h | grep '^  -' | awk '{print $1}'`
+    #node_names=`python3 $PRJ_HOME/bin/node_names.py`
+
+    if [[ ${cur} == -* ]] ; then
+        COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
+        return 0
+    fi
+
+    #COMPREPLY=( $(compgen -W "${node_names}" -- ${cur}) )
+}
+
+complete -F _show_complete YASAsim
