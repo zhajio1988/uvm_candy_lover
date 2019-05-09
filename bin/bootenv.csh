@@ -21,15 +21,62 @@ _show_complete()
     COMPREPLY=()
     cur="${COMP_WORDS[COMP_CWORD]}"
     prev="${COMP_WORDS[COMP_CWORD-1]}"
-    opts=`YASAsim -h | grep '^  -' | awk '{print $1}'`
-    #node_names=`python3 $PRJ_HOME/bin/node_names.py`
+    all_opts=`YASAsim -h | grep '^  -' | awk '{print $1}'`
 
-    if [[ ${cur} == -* ]] ; then
-        COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
+    case $prev in
+    'lsf')
+        cmd_opts=`YASAsim lsf -h | grep '^  -' | awk '{print $1}'` ;;
+    '-t')
+        cmd_opts=`YASAsim -show test | grep -P '\t\t.*' | awk '{print $1}'` ;;
+    '-b')
+        cmd_opts=`YASAsim -show build | grep -P '\t.*' | awk '{print $1}'` ;;         
+    '-g')
+        cmd_opts=`YASAsim -show group | grep -P '\t.*' | awk '{print $1}'` ;;        
+    '*')
+          ;;
+    esac
+
+    if [[ (${prev} == "-t" || ${prev} == "-b" || ${prev} == "-g") && ${cur} == * ]] ; then
+        COMPREPLY=( $(compgen -W "${cmd_opts}" -- ${cur}) )
+        #return 0
+    fi
+
+    if [[ ${prev} == "lsf" && ${cur} == -* ]] ; then
+        COMPREPLY=( $(compgen -W "${cmd_opts}" -- ${cur}) )
         return 0
     fi
 
-    #COMPREPLY=( $(compgen -W "${node_names}" -- ${cur}) )
+    if [[ ${prev} != "lsf" && ${cur} == -* ]] ; then
+        COMPREPLY=( $(compgen -W "${all_opts}" -- ${cur}) )
+        return 0
+    fi
+
 }
 
 complete -F _show_complete YASAsim
+
+### demo function ###
+_foo()
+{
+    COMPREPLY=()
+    local cur=${COMP_WORDS[COMP_CWORD]};
+    local cmd=${COMP_WORDS[COMP_CWORD-1]};
+    case $cmd in
+    'foo')
+          COMPREPLY=( $(compgen -W 'help test read' -- $cur) ) ;;
+    'test')
+          local pro=( $(awk '{print $1}' ./data/a.txt) )
+          COMPREPLY=( $(compgen -W '${pro[@]}' -- $cur) ) ;;
+    '*')
+          ;;
+    esac
+    if [[ "${COMP_WORDS[1]}" == "read" && ${COMP_CWORD} -eq 2 ]]; then
+          local pro=($(pwd))
+          cd ./data
+          compopt -o nospace
+          COMPREPLY=($(compgen -d -f -- $cur))
+          cd $pro
+    fi
+    return 0
+}
+complete -F _foo foo
