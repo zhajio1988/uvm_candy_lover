@@ -18,6 +18,7 @@ export FSDB_DUMP_RIDB=1
 _show_complete()
 {
     local cur prev opts
+    show='test\ngroup\nbuild\n'
     COMPREPLY=()
     cur="${COMP_WORDS[COMP_CWORD]}"
     prev="${COMP_WORDS[COMP_CWORD-1]}"
@@ -31,12 +32,14 @@ _show_complete()
     '-b')
         cmd_opts=`YASAsim -show build | grep -P '\t.*' | awk '{print $1}'` ;;         
     '-g')
-        cmd_opts=`YASAsim -show group | grep -P '\t.*' | awk '{print $1}'` ;;        
+        cmd_opts=`YASAsim -show group | grep -P '\t.*' | awk '{print $1}'` ;;  
+    '-show')
+        cmd_opts=`printf $show` ;;      
     '*')
           ;;
     esac
 
-    if [[ (${prev} == "-t" || ${prev} == "-b" || ${prev} == "-g") && ${cur} == * ]] ; then
+    if [[ (${prev} == "-t" || ${prev} == "-b" || ${prev} == "-g" || ${prev} == "-show") && ${cur} == * ]] ; then
         COMPREPLY=( $(compgen -W "${cmd_opts}" -- ${cur}) )
         #return 0
     fi
