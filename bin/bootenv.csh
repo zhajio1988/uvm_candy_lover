@@ -26,13 +26,13 @@ _show_complete()
 
     case $prev in
     'lsf')
-        cmd_opts=`YASAsim lsf -h | grep '^  -' | awk '{print $1}'` ;;
+        cmd_opts=`YASAsim lsf -h | \grep '^  -' | \awk '{print $1}'` ;;
     '-t')
-        cmd_opts=`YASAsim -show test | grep -P '\t\t.*' | awk '{print $1}'` ;;
+        cmd_opts=`YASAsim -show test | \grep -P '\t\t.*' | \awk '{print $1}'` ;;
     '-b')
-        cmd_opts=`YASAsim -show build | grep -P '\t.*' | awk '{print $1}'` ;;         
+        cmd_opts=`YASAsim -show build | \grep -P '\t.*' | \awk '{print $1}'` ;;         
     '-g')
-        cmd_opts=`YASAsim -show group | grep -P '\t.*' | awk '{print $1}'` ;;  
+        cmd_opts=`YASAsim -show group | \grep -P '\t.*' | \awk '{print $1}'` ;;  
     '-show')
         cmd_opts=`printf $show` ;;      
     '*')
