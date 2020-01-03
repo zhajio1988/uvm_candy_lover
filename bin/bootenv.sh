@@ -1,5 +1,5 @@
 ############################################################ 
-# PICOsim specified envvar
+# YASAsim specified envvar
 ############################################################ 
 export YASA_SIMULATOR=vcs
 curdir=$(cd $(dirname ${BASH_SOURCE[0]}); cd ..; pwd)
@@ -7,7 +7,7 @@ curdir=$(cd $(dirname ${BASH_SOURCE[0]}); cd ..; pwd)
 ### project specified envvar ###
 export PRJ_HOME=$curdir
 export PRJ_NAME=`basename ${PRJ_HOME}`
-alias PICOsim="python3 $PRJ_HOME/bin/YASA/yasaTop.py"
+alias YASAsim="python3 $PRJ_HOME/bin/YASA/yasaTop.py"
 
 ### eda tools specified env var ###
 export NOVAS_EDIT_SOURCE=1
@@ -29,18 +29,18 @@ _show_complete()
 
     case $prev in
     'lsf')
-        cmd_opts=`PICOsim lsf -h | \grep '^  -' | awk '{print $1}'` ;;
+        cmd_opts=`YASAsim lsf -h | \grep '^  -' | awk '{print $1}'` ;;
     '-t')
         if [[ "$ppprev" == "-b" ]]; then
-            cmd_opts=`PICOsim -b $pprev -show test | \grep -P '\t\t.*' | awk '{print $1}'`
+            cmd_opts=`YASAsim -b $pprev -show test | \grep -P '\t\t.*' | awk '{print $1}'`
         else
-            cmd_opts=`PICOsim -show test | \grep -P '\t\t.*' | awk '{print $1}'`
+            cmd_opts=`YASAsim -show test | \grep -P '\t\t.*' | awk '{print $1}'`
         fi
         ;;
     '-b') 
-        cmd_opts=`PICOsim -show build | \grep -P '\t.*' | awk '{print $1}'` ;;         
+        cmd_opts=`YASAsim -show build | \grep -P '\t.*' | awk '{print $1}'` ;;         
     '-g')
-        cmd_opts=`PICOsim -show group | \grep -P '\t.*' | awk '{print $1}'` ;;        
+        cmd_opts=`YASAsim -show group | \grep -P '\t.*' | awk '{print $1}'` ;;        
     '-show')
         cmd_opts=`printf $show` ;;
     '*')
@@ -58,11 +58,11 @@ _show_complete()
     fi
 
     if [[ ${prev} != "lsf" && ${cur} == -* ]] ; then
-        all_opts=`PICOsim -h | \grep '^  -' | awk '{print $1}' | sed 's/,//g'`
+        all_opts=`YASAsim -h | \grep '^  -' | awk '{print $1}' | sed 's/,//g'`
         COMPREPLY=( $(compgen -W "${all_opts}" -- ${cur}) )
         return 0
     fi
 
 }
 
-complete -F _show_complete PICOsim
+complete -F _show_complete YASAsim
