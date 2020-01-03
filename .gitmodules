@@ -1,0 +1,3 @@
+[submodule "bin/YASA"]
+	path = bin/YASA
+	url = https://github.com/zhajio1988/YASA.git
