@@ -57,7 +57,7 @@ pip3 install six
 2. `%> git submodule update --init --recursive`
 3. `%> source bin/bootenv.sh`
 4. `%> mkdir log`
-5. ``%> export TEMP_ROOT=`pwd`log``
+5. ``%> export TEMP_ROOT=`pwd`/log``
 6. `%> YASAsim -t sanity1`
 
 #### Run a testcase or a group
