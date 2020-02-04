@@ -38,12 +38,26 @@ endclass: sanity1
 `endif
 ```
 ### How to use
+#### Dependence
+
+1. psutil
+2. six
+
+``` shell
+su -
+<password>
+yum install python3-devel #centos
+#apt-get install python3-dev #ubuntu
+pip3 install psutil
+pip3 install six
+```
+
 #### Using git
 1. `%> git clone https://github.com/zhajio1988/uvm_candy_lover.git`
-2. `%> cd uvm_candy_lover/bin`
-3. `%> git clone https://github.com/zhajio1988/YASA.git`
-4. `%> cd ../`
-5. `%> source bin/bootenv.csh`
+2. `%> git submodule update --init --recursive`
+3. `%> source bin/bootenv.sh`
+4. `%> mkdir log`
+5. ``%> export TEMP_ROOT=`pwd`log``
 6. `%> YASAsim -t sanity1`
 
 #### Run a testcase or a group
