@@ -23,9 +23,11 @@ _show_complete()
     prev="${COMP_WORDS[COMP_CWORD - 1]}"
 
     if [[ "$prev" == "-t" ]]; then
-        pprev="${COMP_WORDS[COMP_CWORD - 2]}" 
-        ppprev="${COMP_WORDS[COMP_CWORD - 3]}" 
-    fi   
+        if [[ ${#COMP_WORDS[@]} -gt 3 ]]; then
+            pprev="${COMP_WORDS[COMP_CWORD - 2]}" 
+            ppprev="${COMP_WORDS[COMP_CWORD - 3]}"
+        fi
+    fi
 
     case $prev in
     'lsf')
